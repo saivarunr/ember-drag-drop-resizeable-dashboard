@@ -1,0 +1,16 @@
+<div class="u-fullBlock u-pullLeft">
+  <div class="u-pullLeft">
+    {{#sortable-objects sortableObjectList=sortableObjectList sortEndAction='sortEndAction' useSwap=useSwap}}
+      {{#each sortableObjectList as |item|}}
+        {{!-- {{resize-detector concat('#') on-resize=(action 'resize' item.id)}} --}}
+        {{#draggable-object id=(concat DOMPrefix item.id) height=item.style.height width=item.style.width  content=item  overrideClass='sortObject u-pullLeft ui-resizable' isSortable=true}}
+        {{!-- <p> Title:{{item.id}}</p> --}}
+        {{/draggable-object}}
+      {{/each}}
+    {{/sortable-objects}}
+  </div>
+  
+</div>
+<br><br>
+
+{{yield}}
